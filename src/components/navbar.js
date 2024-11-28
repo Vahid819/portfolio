@@ -46,6 +46,7 @@ function Navbar() {
                                 <a href="#" className="text-foreground hover:text-gray-700 px-3 py-2 rounded-md text-sm font-bold transform transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-1 hover:shadow-lg">About</a>
                                 <a href="#" className="text-foreground hover:text-gray-700 px-3 py-2 rounded-md text-sm font-bold transform transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-1 hover:shadow-lg">Services</a>
                                 <a href="#" className="text-foreground hover:text-gray-700 px-3 py-2 rounded-md text-sm font-bold transform transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-1 hover:shadow-lg">Contact</a>
+                            <ModeToggle />
                             </SheetContent>
                         </Sheet>
                     </div>

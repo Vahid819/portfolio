@@ -58,23 +58,23 @@ function page() {
           </div>
         </div>
       </div>
-      <div className="inset-0 mt-10 flex md:flex-wrap sm:flex-wrap flex-wrap md:gap-10 p-4 -z-10">
+      <div className="inset-0 mt-10 flex md:flex-wrap sm:flex-wrap flex-wrap md:gap-10 p-4 -z-10 ">
+      <img
+          src="/MongoDB-js.png"
+          alt="MongoDB"
+          className={`m-2 w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:-rotate-6 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-green-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        />
+        
         <img
           src="/Express-js.png"
           alt="Express.js"
-          className={`w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:rotate-6 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-gray-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-        />
-
-        <img
-          src="/MongoDB-js.png"
-          alt="MongoDB"
-          className={`w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:-rotate-6 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-green-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`m-2 w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:rotate-6 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-gray-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         />
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 394 80"
-          className={`mix-blend-darken w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:rotate-12 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-gray-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`m-2 mix-blend-darken w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:rotate-12 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-gray-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           fill="none"
           style={{
             color: 
@@ -95,13 +95,13 @@ function page() {
         <img
           src="/node-js.png"
           alt="Node.js"
-          className={`w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:-rotate-12 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-green-600/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`m-2 w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:-rotate-12 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-green-600/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         />
 
         <img
           src="/React-js.png"
           alt="React.js"
-          className={`w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:rotate-6 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-blue-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`m-2 w-full md:max-w-[256px] max-w-[156px] h-[150px] object-contain rounded-xl shadow-md hover:scale-125 hover:rotate-6 hover:shadow-xl transition-all duration-500 ease-in-out hover:bg-blue-400/30 backdrop-blur-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         />
       </div>
     </div>
