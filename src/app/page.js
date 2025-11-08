@@ -1,11 +1,13 @@
+'use client'
 import React from "react";
 import Navbar from "@/components/Navbar";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import About from "@/components/landing/About.jsx";
 
 function page() {
   return (
   <div className="w-full relative bg-linear-to-b from-black via-gray-900 to-black text-white min-h-screen">
-      <Navbar />
+      <Navbar/>
       {/* <Hero /> */}
       <main className="pt-16 w-full flex items-center">
         <div className="container mx-auto px-6">
@@ -34,9 +36,13 @@ function page() {
                     aria-label="facebook"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg hover:bg-white/5 transition"
+                    className="relative w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg transition overflow-hidden"
                   >
-                    <FaFacebookF />
+                    {/* glass background + backdrop blur */}
+                    <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-md pointer-events-none" />
+                    {/* subtle sheen */}
+                    <div className="absolute -top-2 -left-3 w-6 h-3 rounded-full bg-white/20 opacity-40 transform rotate-12 blur-sm pointer-events-none" />
+                    <FaFacebookF className="relative z-10" />
                   </a>
 
                   <a
@@ -44,9 +50,11 @@ function page() {
                     aria-label="instagram"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg hover:bg-white/5 transition"
+                    className="relative w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg transition overflow-hidden"
                   >
-                    <FaInstagram />
+                    <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-md pointer-events-none" />
+                    <div className="absolute -top-2 -left-3 w-6 h-3 rounded-full bg-white/20 opacity-40 transform rotate-12 blur-sm pointer-events-none" />
+                    <FaInstagram className="relative z-10" />
                   </a>
 
                   <a
@@ -54,9 +62,11 @@ function page() {
                     aria-label="linkedin"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg hover:bg-white/5 transition"
+                    className="relative w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg transition overflow-hidden"
                   >
-                    <FaLinkedinIn />
+                    <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-md pointer-events-none" />
+                    <div className="absolute -top-2 -left-3 w-6 h-3 rounded-full bg-white/20 opacity-40 transform rotate-12 blur-sm pointer-events-none" />
+                    <FaLinkedinIn className="relative z-10" />
                   </a>
                 </div>
               </div>
@@ -102,6 +112,7 @@ function page() {
       </main>
 
       {/* About section */}
+      <About />
 
     </div>
   );
