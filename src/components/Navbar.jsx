@@ -30,7 +30,7 @@ function Navbar() {
   return (
     <div
       id="navbar"
-      className="w-[90%] fixed h-16 top-6 left-1/2 transform -translate-x-1/2 rounded-xl z-50 border border-white/20 bg-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-md backdrop-filter flex items-center px-6 justify-around before:absolute before:inset-0 before:rounded-xl before:animate-smoke before:bg-linear-to-r before:from-purple-500/10 before:via-pink-500/10 before:to-purple-500/10 before:-z-10 overflow-hidden"
+      className="w-[90%] fixed h-16 top-6 left-1/2 transform -translate-x-1/2 rounded-xl z-50 border border-white/20 bg-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-md backdrop-filter flex items-center px-6 justify-around before:absolute before:inset-0 before:rounded-xl before:animate-smoke before:bg-linear-to-r before:from-purple-500/10 before:via-pink-500/10 before:to-purple-500/10 before:-z-10 overflow-visible"
     >
   <div className="hidden md:flex items-center space-x-4">
         <Avatar className="w-12 h-12">
@@ -71,7 +71,7 @@ function Navbar() {
 
       {/* Mobile dropdown menu */}
       {mobileOpen && (
-        <div className="md:hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-[90%] rounded-xl bg-white/5 border border-white/10 shadow-lg p-4 flex flex-col space-y-2 z-40">
+        <div className="md:hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-[90%] rounded-xl bg-white/5 border border-white/10 shadow-lg p-4 flex flex-col space-y-2 z-60">
           <Link href="/" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">Home</Link>
           <Link href="/about" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">About</Link>
           <Link href="/projects" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">Projects</Link>
