@@ -120,3 +120,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Smooth scroll and simple reveal/parallax utilities */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reveal helper: elements should add data-reveal and optional data-reveal-delay (ms) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.995);
+  transition: transform 700ms cubic-bezier(.2,.9,.2,1), opacity 700ms ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Parallax helper: use data-parallax and data-speed attributes on elements */
+[data-parallax] {
+  will-change: transform;
+  transition: transform 300ms linear;
+}
+
+/* Glass/soft shadow for revealed cards */
+.card-reveal {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}

@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ScrollEffects from "@/components/ScrollEffects";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
         min-h-screen bg-linear-to-r from-black via-zinc-900 to-slate-900
         text-white/90 selection:bg-purple-900/75 selection:text-white`}
       >
+        {/* Global scroll effects (reveal, parallax) mounted once for the whole site */}
+        <ScrollEffects />
         {children}
       </body>
     </html>

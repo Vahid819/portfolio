@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 function About() {
@@ -12,13 +13,16 @@ function About() {
               <div className="absolute -inset-6 rounded-2xl bg-linear-to-br from-pink-500/30 to-indigo-500/20 blur-3xl opacity-80" />
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <div className="w-full h-full rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 flex items-center justify-center">
-                  <img
-                    src="/vahid.png"
-                    onError={(e) => { e.currentTarget.src = '/vahid.jpeg' }}
-                    alt="Vahid"
-                    className="w-full h-full object-contain mix-blend-screen"
-                    style={{ background: 'transparent' }}
-                  />
+                <Image
+                  src="/vahid.jpeg"
+                  alt="Vahid Momin"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-contain rounded-2xl"
+                  onError={(e) => {
+                    e.currentTarget.src = '/vahid.jpeg';
+                  }}
+                />
                 </div>
               </div>
             </div>
