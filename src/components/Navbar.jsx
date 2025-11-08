@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   NavigationMenu,
@@ -71,13 +72,39 @@ function Navbar() {
 
       {/* Mobile dropdown menu */}
       {mobileOpen && (
-        <div className="md:hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-[90%] rounded-xl bg-white/5 border border-white/10 shadow-lg p-4 flex flex-col space-y-2 z-60">
+        <div className="md:hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-[90%] rounded-xl bg-white/5 border border-white/10 shadow-lg p-4 flex flex-col space-y-3 z-60">
+          {/* avatar + name */}
+          <div className="flex items-center space-x-3 px-2">
+            <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10">
+              <img src="/vahid.jpeg" alt="Vahid" className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <div className="font-semibold">Vahid Momin</div>
+              <div className="text-sm text-gray-300">Fullstack Designer</div>
+            </div>
+          </div>
+
+          {/* social icons */}
+          <div className="flex items-center gap-3 px-2">
+            <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg hover:bg-white/5">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg hover:bg-white/5">
+              <FaInstagram />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg hover:bg-white/5">
+              <FaLinkedinIn />
+            </a>
+          </div>
+
+          <hr className="border-white/6" />
+
           <Link href="/" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">Home</Link>
           <Link href="/about" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">About</Link>
           <Link href="/projects" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">Projects</Link>
           <Link href="/skills" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">Skills</Link>
           <Link href="/contact" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded hover:bg-white/10">Contact</Link>
-          <div className="flex items-center space-x-3 pt-2">
+          <div className="flex items-center space-x-3 pt-2 px-2">
             <Link href="/signin" onClick={() => setMobileOpen(false)} className="px-4 py-2 rounded-md">Login</Link>
             <Link href="/signup" onClick={() => setMobileOpen(false)} className="px-4 py-2 rounded-md border">Sign Up</Link>
           </div>
