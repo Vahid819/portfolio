@@ -9,6 +9,7 @@ function page() {
   <div className="w-full relative bg-linear-to-b from-black via-gray-900 to-black text-white min-h-screen">
       <Navbar/>
       {/* <Hero /> */}
+      hello world
       <main className="pt-16 w-full flex items-center">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[72vh]">
