@@ -3,7 +3,7 @@ import React from 'react'
 
 function About() {
   return (
-    <section className="w-full bg-linear-to-b from-black via-gray-900 to-black text-white py-24">
+    <section id='about' className="w-full bg-linear-to-b from-black via-gray-900 to-black text-white py-24">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left: image with transparent-background-friendly container. The img tries /vahid.png and falls back to /vahid.jpeg */}

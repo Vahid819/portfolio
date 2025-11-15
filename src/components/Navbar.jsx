@@ -59,10 +59,10 @@ function Navbar() {
           <NavigationMenuList className="flex space-x-8 text-xl">
             {[
               { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/skills", label: "Skills" },
-              { href: "/projects", label: "Projects" },
-              { href: "/contact", label: "Contact" },
+              { href: "#about", label: "About" },
+              { href: "#skills", label: "Skills" },
+              { href: "#projects", label: "Projects" },
+              { href: "#contact", label: "Contact" },
             ].map((link) => (
               <NavigationMenuItem
                 key={link.href}
@@ -99,10 +99,10 @@ function Navbar() {
           >
             {[
               { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/skills", label: "Skills" },
-              { href: "/projects", label: "Projects" },
-              { href: "/contact", label: "Contact" },
+              { href: "#about", label: "About" },
+              { href: "#skills", label: "Skills" },
+              { href: "#projects", label: "Projects" },
+              { href: "#contact", label: "Contact" },
             ].map((link) => (
               <Link
                 key={link.href}
