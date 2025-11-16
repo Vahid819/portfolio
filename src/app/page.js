@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import About from "@/components/landing/About.jsx";
+import Skill from "@/components/landing/Skill";
 
 function page() {
   return (
@@ -113,6 +114,9 @@ function page() {
 
       {/* About section */}
       <About id="about"/>
+
+      {/* Skill section */}
+      <Skill id="skill"/>
 
     </div>
   );
