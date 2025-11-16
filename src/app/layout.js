@@ -25,9 +25,15 @@ export default function RootLayout({ children }) {
         min-h-screen bg-linear-to-r from-black via-zinc-900 to-slate-900
         text-white/90 selection:bg-purple-900/75 selection:text-white`}
       >
-        {/* Global scroll effects (reveal, parallax) mounted once for the whole site */}
         <ScrollEffects />
-        {children}
+
+        {/* 🟣 REQUIRED FOR BARBA.JS */}
+        <div id="barba-wrapper" data-barba="wrapper" className="min-h-screen">
+          <div data-barba="container">
+            {children}
+          </div>
+        </div>
+
       </body>
     </html>
   );
