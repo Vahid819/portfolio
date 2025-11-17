@@ -3,14 +3,14 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import About from "@/components/landing/About.jsx";
-import Skill from "@/components/landing/Skill";
+import Skills from "@/components/landing/Skill";
 
 function page() {
   return (
-  <div className="w-full relative bg-linear-to-b from-black via-gray-900 to-black text-white min-h-screen">
+  <div className="relative bg-linear-to-b from-black via-gray-900 to-black text-white">
       <Navbar/>
       {/* <Hero /> */}
-      <main className="pt-16 w-full flex items-center">
+      <main className="pt-16 flex items-center">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[72vh]">
             {/* Left column - text and CTAs */}
@@ -116,7 +116,7 @@ function page() {
       <About id="about"/>
 
       {/* Skill section */}
-      <Skill id="skill"/>
+      <Skills id="skill"/>
 
     </div>
   );

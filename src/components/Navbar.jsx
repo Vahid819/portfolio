@@ -32,7 +32,7 @@ function Navbar() {
       {/* Navbar (sits above the overlay) */}
       <header
         id="navbar"
-        className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] h-16 z-50 
+        className="fixed top-6 left-1/2 -translate-x-1/2 md:w-[90%] w-[80%] h-16 z-50 
                    border border-white/20 bg-white/10 backdrop-blur-md 
                    rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
                    flex items-center justify-between px-6 overflow-visible"
