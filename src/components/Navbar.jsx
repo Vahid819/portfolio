@@ -13,15 +13,35 @@ function Navbar() {
   const [isClient, setIsClient] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // ⭐ Scroll navbar animation
+  const [lastScroll, setLastScroll] = useState(0);
+  const [hidden, setHidden] = useState(false);
+
   useEffect(() => {
     setIsClient(true);
-  }, []);
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      // Hide on scroll down, show on scroll up
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+
+      setLastScroll(currentScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScroll]);
 
   if (!isClient) return null;
 
   return (
     <>
-      {/* ✅ Background blur overlay behind the navbar */}
+      {/* Overlay */}
       {mobileOpen && (
         <div
           className="fixed inset-0 bg-black/40 backdrop-blur-md z-40 transition-opacity duration-300"
@@ -29,22 +49,26 @@ function Navbar() {
         ></div>
       )}
 
-      {/* Navbar (sits above the overlay) */}
+      {/* Navbar */}
       <header
         id="navbar"
-        className="fixed top-6 left-1/2 -translate-x-1/2 md:w-[90%] w-[80%] h-16 z-50 
-                   border border-white/20 bg-white/10 backdrop-blur-md 
-                   rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
-                   flex items-center justify-between px-6 overflow-visible"
+        className={`
+          fixed left-1/2 -translate-x-1/2 md:w-[90%] w-[80%] h-16 z-50 
+          border border-white/20 bg-white/10 backdrop-blur-md 
+          rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
+          flex items-center justify-between px-6 overflow-visible transition-all duration-500
+
+          ${hidden ? "top-0 opacity-0 -translate-y-10 pointer-events-none" 
+                   : "top-6 opacity-100 translate-y-0"}
+        `}
       >
-        {/* Left section: logo / avatar */}
+        {/* Left section */}
         <div className="flex items-center space-x-3 md:w-0 w-full justify-around">
-          <Avatar className="w-12 h-12">
+          <Avatar className="w-12 h-12 transition-transform duration-300 hover:scale-105">
             <AvatarImage src="/vahid.jpeg" alt="Profile" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
 
-          {/* Mobile toggle button (hamburger / close icon) */}
           <button
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             className="md:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-white/10 transition-all"
@@ -66,7 +90,8 @@ function Navbar() {
             ].map((link) => (
               <NavigationMenuItem
                 key={link.href}
-                className="group px-3 py-1 rounded-md transition-all duration-300 hover:bg-white/10 hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]"
+                className="group px-3 py-1 rounded-md transition-all duration-300 
+                           hover:bg-white/10 hover:scale-105 hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]"
               >
                 <Link href={link.href}>{link.label}</Link>
               </NavigationMenuItem>
@@ -78,24 +103,27 @@ function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           <Link
             href="/signin"
-            className="px-4 py-2 text-lg rounded-lg transition-all duration-300 hover:text-white hover:bg-white/10 hover:scale-105 active:scale-95"
+            className="px-4 py-2 text-lg rounded-lg transition-all duration-300 
+                       hover:text-white hover:bg-white/10 hover:scale-105 active:scale-95"
           >
             Login
           </Link>
           <Link
             href="/signup"
-            className="px-4 py-2 text-lg rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-105 hover:shadow-[0_0_20px_0_rgba(255,255,255,0.3)] active:scale-95"
+            className="px-4 py-2 text-lg rounded-lg border border-white/20 transition-all duration-300 
+                       hover:bg-white/20 hover:scale-105 hover:shadow-[0_0_20px_0_rgba(255,255,255,0.3)] active:scale-95"
           >
             Sign Up
           </Link>
         </div>
 
-        {/* Mobile Dropdown (above overlay) */}
+        {/* Mobile dropdown */}
         {mobileOpen && (
           <nav
             className="md:hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 
                        w-[90%] rounded-xl bg-white/10 border border-white/20 
-                       shadow-lg p-4 flex flex-col space-y-2 backdrop-blur-lg z-50"
+                       shadow-lg p-4 flex flex-col space-y-2 backdrop-blur-lg z-50 
+                       animate-fadeIn"
           >
             {[
               { href: "/", label: "Home" },

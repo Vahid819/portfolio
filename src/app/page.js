@@ -1,20 +1,34 @@
+// Updated React page with animation, transitions, and scroll effects
 'use client'
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import About from "@/components/landing/About.jsx";
 import Skills from "@/components/landing/Skill";
+import { motion } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function page() {
+function Page() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-  <div className="relative bg-linear-to-b from-black via-gray-900 to-black text-white">
-      <Navbar/>
-      {/* <Hero /> */}
+    <div className="relative bg-linear-to-b from-black via-gray-900 to-black text-white">
+      <Navbar />
+
       <main className="pt-16 flex items-center">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[72vh]">
-            {/* Left column - text and CTAs */}
-            <section className="space-y-6">
+
+            {/* Left column */}
+            <motion.section
+              className="space-y-6"
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <span className="inline-block text-sm tracking-widest text-sky-400 bg-sky-900/10 px-3 py-1 rounded">VAHID MOMIN</span>
 
               <div className="space-y-1">
@@ -25,58 +39,45 @@ function page() {
               </div>
 
               <p className="text-gray-300 max-w-xl">
-                Yet bed any for travelling assistance indulgence mt-4unpleasant. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment.
+                Yet bed any for travelling assistance indulgence unpleasant. Not thoughts all exercise blessing.
               </p>
 
               <div className="flex items-center gap-4 mt-4">
-                <button className="px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-full font-semibold transition">Get in touch →</button>
+                <motion.button
+                  className="px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-full font-semibold transition"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get in touch →
+                </motion.button>
 
                 <div className="flex gap-3">
-                  <a
-                    href="#"
-                    aria-label="facebook"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg transition overflow-hidden"
-                  >
-                    {/* glass background + backdrop blur */}
-                    <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-md pointer-events-none" />
-                    {/* subtle sheen */}
-                    <div className="absolute -top-2 -left-3 w-6 h-3 rounded-full bg-white/20 opacity-40 transform rotate-12 blur-sm pointer-events-none" />
-                    <FaFacebookF className="relative z-10" />
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="instagram"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg transition overflow-hidden"
-                  >
-                    <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-md pointer-events-none" />
-                    <div className="absolute -top-2 -left-3 w-6 h-3 rounded-full bg-white/20 opacity-40 transform rotate-12 blur-sm pointer-events-none" />
-                    <FaInstagram className="relative z-10" />
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="linkedin"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg transition overflow-hidden"
-                  >
-                    <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-md pointer-events-none" />
-                    <div className="absolute -top-2 -left-3 w-6 h-3 rounded-full bg-white/20 opacity-40 transform rotate-12 blur-sm pointer-events-none" />
-                    <FaLinkedinIn className="relative z-10" />
-                  </a>
+                  {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+                    <motion.a
+                      key={i}
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.15 }}
+                      className="relative w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg transition overflow-hidden"
+                    >
+                      <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-md" />
+                      <div className="absolute -top-2 -left-3 w-6 h-3 rounded-full bg-white/20 opacity-40 rotate-12 blur-sm" />
+                      <Icon className="relative z-10" />
+                    </motion.a>
+                  ))}
                 </div>
               </div>
-            </section>
+            </motion.section>
 
-            {/* Right column - decorative profile / artwork */}
-            <section className="flex items-center justify-center">
-              <div className="relative w-80 h-80 md:w-120 md:h-120">
-                {/* concentric rings (SVG) */}
+            {/* Right column image */}
+            <motion.section
+              className="flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9 }}
+            >
+              <div className="relative w-80 h-80 md:w-120 md:h-120" data-aos="zoom-in">
                 <svg viewBox="0 0 300 300" className="w-full h-full relative z-10">
                   <defs>
                     <linearGradient id="g1" x1="0" x2="1">
@@ -92,34 +93,31 @@ function page() {
                   </g>
                 </svg>
 
-                {/* colorful blurred blobs behind the portrait */}
-                <div className="absolute -left-10 -top-8 w-44 h-44 rounded-full bg-linear-to-br from-pink-500/60 to-indigo-500/30 blur-3xl mix-blend-screen opacity-90 z-0" />
-                <div className="absolute -right-12 -bottom-8 w-56 h-56 rounded-full bg-linear-to-br from-sky-400/50 to-emerald-400/30 blur-3xl mix-blend-screen opacity-90 z-0" />
+                <div className="absolute -left-10 -top-8 w-44 h-44 rounded-full bg-linear-to-br from-pink-500/60 to-indigo-500/30 blur-3xl opacity-90 z-0" />
+                <div className="absolute -right-12 -bottom-8 w-56 h-56 rounded-full bg-linear-to-br from-sky-400/50 to-emerald-400/30 blur-3xl opacity-90 z-0" />
                 <div className="absolute left-1/2 top-1/3 -translate-x-1/2 w-80 h-80 rounded-full bg-white/5 blur-2xl z-0" />
 
-                {/* center rounded profile-like card (foreground) */}
                 <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="w-64 h-64 md:w-104 md:h-104 rounded-full overflow-hidden bg-linear-to-tr from-gray-700 via-gray-900 to-black border-4 border-white/5 shadow-lg flex items-center justify-center relative ring-4 ring-sky-500/10">
-                    {/* portrait from public/ with hover scale and smooth transition */}
-                    <img src="/vahid.jpeg" alt="Vahid" className="w-full h-full object-cover transform transition-transform duration-500 ease-out hover:scale-105" />
-                    {/* subtle vignette overlay to soften edges */}
-                    <div className="absolute inset-0 rounded-full bg-linear-to-t from-black/30 to-transparent pointer-events-none" />
-                  </div>
+                  <motion.div
+                    className="w-64 h-64 md:w-104 md:h-104 rounded-full overflow-hidden bg-linear-to-tr from-gray-700 via-gray-900 to-black border-4 border-white/5 shadow-lg ring-4 ring-sky-500/10"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <img src="/vahid.jpeg" alt="Vahid" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 rounded-full bg-linear-to-t from-black/30 to-transparent" />
+                  </motion.div>
                 </div>
               </div>
-            </section>
+            </motion.section>
           </div>
         </div>
       </main>
 
-      {/* About section */}
-      <About id="about"/>
-
-      {/* Skill section */}
-      <Skills id="skill"/>
+      <div data-aos="fade-up"><About id="about" /></div>
+      <div data-aos="fade-up"><Skills id="skill" /></div>
 
     </div>
   );
 }
 
-export default page;
+export default Page;
