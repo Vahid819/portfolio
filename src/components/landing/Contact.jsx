@@ -100,7 +100,7 @@ export default function Contact({
           <div className="mt-6 text-slate-300 space-y-3">
             <div>
               <div className="text-xs uppercase text-slate-400">Email</div>
-              <div className="font-medium">vahidmomin.dev.com</div>
+              <div className="font-medium">vahidmomin.dev@gmail.com</div>
             </div>
             <div>
               <div className="text-xs uppercase text-slate-400">Phone</div>
@@ -148,7 +148,7 @@ export default function Contact({
               name="service"
               value={form.service}
               onChange={handleChange}
-              className="w-full bg-white/5 text-black px-3 py-2 rounded-md outline-none focus:ring-2 focus:ring-indigo-400 transition"
+              className="w-full bg-white/5 text-white px-3 py-2 rounded-md outline-none focus:ring-2 focus:ring-indigo-400 transition"
             >
               <option value="">Select service</option>
               <option>Website</option>
