@@ -100,11 +100,11 @@ export default function Contact({
           <div className="mt-6 text-slate-300 space-y-3">
             <div>
               <div className="text-xs uppercase text-slate-400">Email</div>
-              <div className="font-medium">hello@yourdomain.com</div>
+              <div className="font-medium">vahidmomin.dev.com</div>
             </div>
             <div>
               <div className="text-xs uppercase text-slate-400">Phone</div>
-              <div className="font-medium">(+1) 555 123 4567</div>
+              <div className="font-medium">(+19) 8261040814</div>
             </div>
           </div>
         </div>
