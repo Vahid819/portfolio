@@ -148,7 +148,7 @@ export default function Contact({
               name="service"
               value={form.service}
               onChange={handleChange}
-              className="w-full bg-white/5 text-white px-3 py-2 rounded-md outline-none focus:ring-2 focus:ring-indigo-400 transition"
+              className="w-full bg-white/5 text-black px-3 py-2 rounded-md outline-none focus:ring-2 focus:ring-indigo-400 transition"
             >
               <option value="">Select service</option>
               <option>Website</option>

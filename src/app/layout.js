@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollEffects from "@/components/ScrollEffects";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <div id="barba-wrapper" data-barba="wrapper" className="min-h-screen">
           <div data-barba="container">
             {children}
+            <SpeedInsights />
           </div>
         </div>
 
