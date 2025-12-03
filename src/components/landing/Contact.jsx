@@ -104,7 +104,7 @@ export default function Contact({
             </div>
             <div>
               <div className="text-xs uppercase text-slate-400">Phone</div>
-              <div className="font-medium">(+19) 8261040814</div>
+              <div className="font-medium">(+91) 8261040814</div>
             </div>
           </div>
         </div>
