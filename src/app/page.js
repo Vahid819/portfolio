@@ -50,7 +50,7 @@ function Page() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Get in touch →
+                  Get in touch → hi
                 </motion.button>
 
                 <div className="flex gap-3">
