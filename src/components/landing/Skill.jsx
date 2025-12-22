@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Frontendlogo,Backendlogo } from "@/../public/image.js";
+import { Frontendlogo,Backendlogo, Fullstacklogo, AIlogo } from "@/../public/image.js";
 import { motion } from "framer-motion";
 
 const Skill = [
@@ -24,6 +24,7 @@ const Skill = [
   {
     name: "Fullstack Development",
     details: ["MERN Stack", "MEAN Stack", "Django", "Flask"],
+    image: Fullstacklogo
   },
   {
     name: "AI Features",
@@ -33,6 +34,7 @@ const Skill = [
       "Natural Language Processing",
       "Recommendation Systems",
     ],
+    image: AIlogo
   },
 ];
 
