@@ -42,7 +42,7 @@ function About() {
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <div className="w-full h-full rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 flex items-center justify-center">
                   <Image
-                    src="/vahid.jpeg"
+                    src="/vahid.jpg"
                     alt="Vahid Momin"
                     fill
                     className="object-contain rounded-2xl"

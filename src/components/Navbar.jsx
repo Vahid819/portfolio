@@ -65,7 +65,7 @@ function Navbar() {
         {/* Left section */}
         <div className="flex items-center space-x-3 md:w-0 w-full justify-around">
           <Avatar className="w-12 h-12 transition-transform duration-300 hover:scale-105">
-            <AvatarImage src="/vahid.jpeg" alt="Profile" />
+            <AvatarImage src="/dp.jpg" alt="Profile" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
 
