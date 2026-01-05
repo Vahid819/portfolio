@@ -3,10 +3,11 @@
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import About from "@/components/landing/About.jsx";
-import Skills from "@/components/landing/Skill";
-import Project from "@/components/landing/Project";
-import Contact from "@/components/landing/Contact";
+import About from "@/components/pages/About.jsx";
+import Skills from "@/components/pages/Skill";
+import Project from "@/components/pages/Project";
+import Contact from "@/components/pages/Contact";
+import Comingsoon from "@/components/pages/Comingsoon";
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -117,7 +118,8 @@ function Page() {
 
       <div data-aos="fade-up"><About id="about" /></div>
       <div data-aos="fade-up"><Skills id="skill" /></div>
-      <div data-aos="fade-up"><Project id="projects" /></div>
+      {/* <div data-aos="fade-up"><Project id="projects" /></div> */}
+      <div data-aos="fade-up"><Comingsoon id="projects" /></div>
       <div data-aos="fade-up"><Contact id="contact" /></div>
     </div>
   );
