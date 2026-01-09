@@ -32,7 +32,7 @@ function Page() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block text-sm tracking-widest text-sky-400 bg-sky-900/10 px-3 py-1 rounded">VAHID MOMIN</span>
+              <span className="inline-block text-sm tracking-widest text-sky-400 bg-sky-900/10 md:px-3 px-0 md:py-1 py-0 mb-0 mt-6 rounded">VAHID MOMIN</span>
 
               <div className="space-y-1">
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
@@ -51,7 +51,7 @@ function Page() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Get in touch → hi
+                  Get in touch →
                 </motion.button>
 
                 <div className="flex gap-3">

@@ -84,8 +84,8 @@ function Navbar() {
             {[
               { href: "/", label: "Home" },
               { href: "#about", label: "About" },
-              { href: "#skill", label: "Skills" },
-              { href: "#projects", label: "Projects" },
+              { href: "#skills", label: "Skills" },
+              { href: "#comingsoone", label: "Projects" },
               { href: "#contact", label: "Contact" },
             ].map((link) => (
               <NavigationMenuItem
@@ -128,8 +128,8 @@ function Navbar() {
             {[
               { href: "/", label: "Home" },
               { href: "#about", label: "About" },
-              { href: "#skill", label: "Skills" },
-              { href: "#projects", label: "Projects" },
+              { href: "#skills", label: "Skills" },
+              { href: "#comingsoone", label: "Projects" },
               { href: "#contact", label: "Contact" },
             ].map((link) => (
               <Link

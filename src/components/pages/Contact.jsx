@@ -46,7 +46,7 @@ export default function Contact({
     "linear-gradient(90deg,#ff9a9e 0%, #fad0c4 25%, #a18cd1 50%, #fbc2eb 75%, #89f7fe 100%)";
 
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center" aria-labelledby="contact-heading">
+    <section id="contact" className="relative w-full min-h-[80vh] flex items-center" aria-labelledby="contact-heading">
       {/* background image */}
       <motion.div
         className="absolute inset-0 bg-center bg-cover filter brightness-60"
