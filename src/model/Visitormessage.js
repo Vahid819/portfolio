@@ -21,6 +21,6 @@ const VisitorMessageSchema = new Schema({
         type: String,
         required: true
     }
-});
+}, { timestamps: true });
 
-export default mongoose.model("VisitorMessage", VisitorMessageSchema);
+export default mongoose.models.VisitorMessage || mongoose.model("VisitorMessage", VisitorMessageSchema);
