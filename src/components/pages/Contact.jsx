@@ -150,11 +150,11 @@ export default function Contact({
               onChange={handleChange}
               className="w-full bg-white/5 text-white px-3 py-2 rounded-md outline-none focus:ring-2 focus:ring-indigo-400 transition"
             >
-              <option value="">Select service</option>
-              <option>Website</option>
-              <option>UI/UX</option>
-              <option>Consulting</option>
-              <option>Other</option>
+              <option className="bg-black" value="">Select service</option>
+              <option className="bg-black">Website</option>
+              <option className="bg-black">UI/UX</option>
+              <option className="bg-black">Consulting</option>
+              <option className="bg-black">Other</option>
             </select>
           </div>
 
