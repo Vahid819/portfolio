@@ -17,7 +17,7 @@ async function dbConnection() {
             retryWrites: true,
             w: "majority",
         });
-        
+        w
         connection.isConnected = db.connections[0].readyState;
         
         console.log("✓ Database connection successful");
