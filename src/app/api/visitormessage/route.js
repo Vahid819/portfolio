@@ -2,7 +2,7 @@ import dbConnection from "@/lib/db";
 import Visitormessage from "@/model/Visitormessage";
 
 export async function POST(req, res){
-    dbConnection();
+    await dbConnection();
     const {name, email, skill, message} = await req.json();
     
     try {

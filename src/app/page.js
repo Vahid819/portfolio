@@ -34,6 +34,7 @@ function Page() {
             >
               <span className="inline-block text-sm tracking-widest text-sky-400 bg-sky-900/10 md:px-3 px-0 md:py-1 py-0 mb-0 mt-6 rounded">VAHID MOMIN</span>
 
+
               <div className="space-y-1">
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
                   HAY! I'M <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-indigo-500">VAHID</span>

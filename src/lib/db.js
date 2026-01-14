@@ -1,34 +1,42 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/portfolio'
+// 👇 ADD THIS LINE HERE (TEMPORARY)
+console.log("ENV CHECK =>", JSON.stringify(process.env.MONGODB_URL));
 
-const connection = {}
+const MONGODB_URL = process.env.MONGODB_URL;
 
-async function dbConnection() {
-    if(connection.isConnected){
-        console.log("Database already connected");
-        return;
-    }
-
-    try {
-        console.log("Attempting to connect to:", MONGODB_URL.replace(/\/\/.*:.*@/, '//***:***@'));
-        
-        const db = await mongoose.connect(MONGODB_URL, {
-            retryWrites: true,
-            w: "majority",
-        });
-        w
-        connection.isConnected = db.connections[0].readyState;
-        
-        console.log("✓ Database connection successful");
-        
-    } catch (error) {
-        console.error("✗ Database connection failed:", error.message);
-        console.error("Make sure MongoDB is running or MONGODB_URL is correct");
-        
-        // Don't throw - allow app to start even if DB fails initially
-        connection.isConnected = false;
-    }
+if (!MONGODB_URL) {
+  throw new Error("❌ MONGODB_URL is not defined");
 }
 
-export default dbConnection; 
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
+async function dbConnection() {
+  if (cached.conn) {
+    console.log("✓ Database already connected");
+    return cached.conn;
+  }
+
+  try {
+
+    if (!cached.promise) {
+      cached.promise = mongoose.connect(MONGODB_URL, {
+        bufferCommands: false,
+      });
+    }
+
+    cached.conn = await cached.promise;
+    console.log("✓ Database connection successful");
+    return cached.conn;
+  } catch (error) {
+    cached.promise = null;
+    console.error("✗ Database connection failed:", error.message);
+    throw error;
+  }
+}
+
+export default dbConnection;
