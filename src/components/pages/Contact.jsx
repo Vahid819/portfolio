@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { VisitorSchema } from '@/schemas/visitorSchema'
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa'
+import { sendMessageWithWhatsApp } from '@/lib/messageService'
 
 import { Textarea } from '../ui/textarea'
 import {
@@ -37,16 +38,16 @@ function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('/api/visitormessage', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      if (response.ok) {
+      const result = await sendMessageWithWhatsApp(data)
+      if (result.success) {
         form.reset()
+        alert('Message saved to database and sent to WhatsApp!')
+      } else {
+        alert('Error: ' + result.message)
       }
     } catch (error) {
       console.error('Error submitting form:', error)
+      alert('Error submitting form')
     }
   }
 
@@ -96,6 +97,9 @@ function Contact() {
               </Link>
               <Link href='https://instagram.com/yourprofile' target='_blank' className='text-white hover:text-[#E1306C] transform hover:scale-125 hover:-translate-y-2 transition duration-300 ease-in-out'>
                 <FaInstagram size={32} />
+              </Link>
+              <Link href='https://wa.me/+918261040814' target='_blank' className='text-white hover:text-[#25D366] transform hover:scale-125 hover:-translate-y-2 transition duration-300 ease-in-out'>
+                <FaWhatsapp size={32} />
               </Link>
             </div>
           </div>
