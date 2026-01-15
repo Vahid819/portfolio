@@ -41,7 +41,6 @@ function Contact() {
       const result = await sendMessageWithWhatsApp(data)
       if (result.success) {
         form.reset()
-        alert('Message saved to database and sent to WhatsApp!')
       } else {
         alert('Error: ' + result.message)
       }
