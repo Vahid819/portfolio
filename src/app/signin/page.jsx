@@ -107,6 +107,7 @@ export default function SigninPage() {
                   <p className="text-sm text-muted mb-6">Welcome to UISOCIAL</p>
 
                   <form className="space-y-4">
+                    <input type="text" placeholder="Username" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/40" />
                     <input type="email" placeholder="Email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/40" />
                     <input type="password" placeholder="Password" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/40" />
 
